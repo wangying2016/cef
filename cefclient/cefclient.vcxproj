@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{647F9B9B-2D97-31F3-A25A-7626A744757D}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>cefclient</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\myproject\cef build\cefclient\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cefclient.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cefclient</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\myproject\cef build\cefclient\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cefclient.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cefclient</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\myproject\cef source code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4481;4512;4701;4702;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;WIN32;_WIN32;_WINDOWS;UNICODE;_UNICODE;WINVER=0x0602;_WIN32_WINNT=0x602;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;_WINDOWS;UNICODE;_UNICODE;WINVER=0x0602;_WIN32_WINNT=0x602;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\myproject\cef source code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\myproject\cef source code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Adding manifest...															</Message>
+      <Command>setlocal
+mt.exe -nologo -manifest "E:/myproject/cef source code/cefclient/resources/win/cefclient.exe.manifest" "E:/myproject/cef source code/cefclient/resources/win/compatibility.manifest" -outputresource:"E:/myproject/cef build/cefclient/Debug/cefclient.exe";#1
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Debug/d3dcompiler_43.dll" "E:/myproject/cef build/cefclient/Debug/d3dcompiler_43.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Debug/d3dcompiler_47.dll" "E:/myproject/cef build/cefclient/Debug/d3dcompiler_47.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Debug/libcef.dll" "E:/myproject/cef build/cefclient/Debug/libcef.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Debug/libEGL.dll" "E:/myproject/cef build/cefclient/Debug/libEGL.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Debug/libGLESv2.dll" "E:/myproject/cef build/cefclient/Debug/libGLESv2.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Debug/natives_blob.bin" "E:/myproject/cef build/cefclient/Debug/natives_blob.bin"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Debug/snapshot_blob.bin" "E:/myproject/cef build/cefclient/Debug/snapshot_blob.bin"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Debug/wow_helper.exe" "E:/myproject/cef build/cefclient/Debug/wow_helper.exe"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/cef.pak" "E:/myproject/cef build/cefclient/Debug/cef.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/cef_100_percent.pak" "E:/myproject/cef build/cefclient/Debug/cef_100_percent.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/cef_200_percent.pak" "E:/myproject/cef build/cefclient/Debug/cef_200_percent.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/cef_extensions.pak" "E:/myproject/cef build/cefclient/Debug/cef_extensions.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/devtools_resources.pak" "E:/myproject/cef build/cefclient/Debug/devtools_resources.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/icudtl.dat" "E:/myproject/cef build/cefclient/Debug/icudtl.dat"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_directory "E:/myproject/cef source code/Resources/locales" "E:/myproject/cef build/cefclient/Debug/locales"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>E:\myproject\cef source code\Debug\libcef.lib;..\libcef_dll\Debug\libcef_dll_wrapper.lib;comctl32.lib;rpcrt4.lib;shlwapi.lib;ws2_32.lib;glu32.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/myproject/cef build/cefclient/Debug/cefclient.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/myproject/cef build/cefclient/Debug/cefclient.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Manifest>
+      <AdditionalManifestFiles>E:\myproject\cef source code\cefclient\resources\win\cefclient.exe.manifest;</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\myproject\cef source code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4244;4481;4512;4701;4702;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;_NDEBUG;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;WIN32;_WIN32;_WINDOWS;UNICODE;_UNICODE;WINVER=0x0602;_WIN32_WINNT=0x602;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_NDEBUG;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;_WIN32;_WINDOWS;UNICODE;_UNICODE;WINVER=0x0602;_WIN32_WINNT=0x602;NOMINMAX;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\myproject\cef source code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\myproject\cef source code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Adding manifest...															</Message>
+      <Command>setlocal
+mt.exe -nologo -manifest "E:/myproject/cef source code/cefclient/resources/win/cefclient.exe.manifest" "E:/myproject/cef source code/cefclient/resources/win/compatibility.manifest" -outputresource:"E:/myproject/cef build/cefclient/Release/cefclient.exe";#1
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Release/d3dcompiler_43.dll" "E:/myproject/cef build/cefclient/Release/d3dcompiler_43.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Release/d3dcompiler_47.dll" "E:/myproject/cef build/cefclient/Release/d3dcompiler_47.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Release/libcef.dll" "E:/myproject/cef build/cefclient/Release/libcef.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Release/libEGL.dll" "E:/myproject/cef build/cefclient/Release/libEGL.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Release/libGLESv2.dll" "E:/myproject/cef build/cefclient/Release/libGLESv2.dll"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Release/natives_blob.bin" "E:/myproject/cef build/cefclient/Release/natives_blob.bin"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Release/snapshot_blob.bin" "E:/myproject/cef build/cefclient/Release/snapshot_blob.bin"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Release/wow_helper.exe" "E:/myproject/cef build/cefclient/Release/wow_helper.exe"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/cef.pak" "E:/myproject/cef build/cefclient/Release/cef.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/cef_100_percent.pak" "E:/myproject/cef build/cefclient/Release/cef_100_percent.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/cef_200_percent.pak" "E:/myproject/cef build/cefclient/Release/cef_200_percent.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/cef_extensions.pak" "E:/myproject/cef build/cefclient/Release/cef_extensions.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/devtools_resources.pak" "E:/myproject/cef build/cefclient/Release/devtools_resources.pak"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_if_different "E:/myproject/cef source code/Resources/icudtl.dat" "E:/myproject/cef build/cefclient/Release/icudtl.dat"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+D:\CMake\bin\cmake.exe -E copy_directory "E:/myproject/cef source code/Resources/locales" "E:/myproject/cef build/cefclient/Release/locales"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>E:\myproject\cef source code\Release\libcef.lib;..\libcef_dll\Release\libcef_dll_wrapper.lib;comctl32.lib;rpcrt4.lib;shlwapi.lib;ws2_32.lib;glu32.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/myproject/cef build/cefclient/Release/cefclient.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/myproject/cef build/cefclient/Release/cefclient.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Manifest>
+      <AdditionalManifestFiles>E:\myproject\cef source code\cefclient\resources\win\cefclient.exe.manifest;</AdditionalManifestFiles>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\myproject\cef source code\cefclient\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/myproject/cef source code/cefclient/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\CMake\bin\cmake.exe "-HE:/myproject/cef source code" "-BE:/myproject/cef build" --check-stamp-file "E:/myproject/cef build/cefclient/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:/myproject/cef source code/cefclient/CMakeLists.txt;E:\myproject\cef source code\cefclient\CMakeLists.txt;E:\myproject\cef source code\cefclient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\myproject\cef build\cefclient\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule E:/myproject/cef source code/cefclient/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\CMake\bin\cmake.exe "-HE:/myproject/cef source code" "-BE:/myproject/cef build" --check-stamp-file "E:/myproject/cef build/cefclient/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:/myproject/cef source code/cefclient/CMakeLists.txt;E:\myproject\cef source code\cefclient\CMakeLists.txt;E:\myproject\cef source code\cefclient\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\myproject\cef build\cefclient\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\binding_test.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\binding_test.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\browser_window.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\browser_window.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\bytes_write_handler.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\bytes_write_handler.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\client_app_browser.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\client_app_browser.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\client_app_delegates_browser.cc"  />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\client_handler.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\client_handler.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\client_handler_osr.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\client_handler_osr.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\client_handler_std.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\client_handler_std.h" />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\client_types.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\dialog_test.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\dialog_test.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\geometry_util.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\geometry_util.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\main_context.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\main_context.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\main_context_impl.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\main_context_impl.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\main_message_loop.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\main_message_loop.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\main_message_loop_std.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\main_message_loop_std.h" />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\osr_dragdrop_events.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\osr_renderer.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\osr_renderer.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\preferences_test.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\preferences_test.h" />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\resource.h" />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\resource_util.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\response_filter_test.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\response_filter_test.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\root_window.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\root_window.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\root_window_manager.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\root_window_manager.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\scheme_test.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\scheme_test.h" />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\temp_window.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\test_runner.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\test_runner.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\urlrequest_test.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\urlrequest_test.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\window_test.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\window_test.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\common\client_app.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\common\client_app.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\common\client_app_delegates_common.cc"  />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\common\client_app_other.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\common\client_app_other.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\common\client_switches.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\common\client_switches.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\common\scheme_test_common.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\common\scheme_test_common.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\renderer\client_app_delegates_renderer.cc"  />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\renderer\client_app_renderer.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\renderer\client_app_renderer.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\renderer\client_renderer.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\renderer\client_renderer.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\renderer\performance_test.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\renderer\performance_test.h" />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\renderer\performance_test_setup.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\renderer\performance_test_tests.cc"  />
+    <None Include="E:\myproject\cef source code\cefclient\resources\binding.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\dialogs.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\localstorage.html" />
+    <Image Include="E:\myproject\cef source code\cefclient\resources\logo.png" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\osr_test.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\other_tests.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\pdf.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\pdf.pdf" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\performance.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\performance2.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\preferences.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\response_filter.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\transparency.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\urlrequest.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\window.html" />
+    <None Include="E:\myproject\cef source code\cefclient\resources\xmlhttprequest.html" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\cefclient_win.cc"  />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\browser_window_osr_win.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\browser_window_osr_win.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\browser_window_std_win.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\browser_window_std_win.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\main_context_impl_win.cc"  />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\main_message_loop_multithreaded_win.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\main_message_loop_multithreaded_win.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\osr_dragdrop_win.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\osr_dragdrop_win.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\osr_window_win.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\osr_window_win.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\resource_util_win.cc"  />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\root_window_win.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\root_window_win.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\temp_window_win.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\temp_window_win.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\util_win.cc"  />
+    <ClInclude Include="E:\myproject\cef source code\cefclient\browser\util_win.h" />
+    <ClCompile Include="E:\myproject\cef source code\cefclient\browser\window_test_win.cc"  />
+    <None Include="E:\myproject\cef source code\cefclient\resources\win\cefclient.ico" />
+    <ResourceCompile Include="E:\myproject\cef source code\cefclient\resources\win\cefclient.rc"  />
+    <None Include="E:\myproject\cef source code\cefclient\resources\win\small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\myproject\cef build\ZERO_CHECK.vcxproj">
+      <Project>{B0D1CF8D-2266-3BC0-A9D3-52DB5939D771}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\myproject\cef build\libcef_dll\libcef_dll_wrapper.vcxproj">
+      <Project>{E12C2C38-9827-3913-B9B6-811E6858D3FE}</Project>
+      <Name>libcef_dll_wrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
